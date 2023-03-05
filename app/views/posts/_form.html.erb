@@ -25,6 +25,6 @@
   <div class="flex space-x-3 items-center justify-between">
     <%= form.submit class: "rounded bg-teal-600 hover:bg-teal-700 px-4 py-2 text-center text-white font-medium focus:ring-4 focus:ring-teal-50 hover:cursor-pointer" %>
 
-    <%= link_to "Cancel", posts_path, class: "bg-slate-100 rounded px-4 py-2 text-center text-slate-700 font-medium hover:bg-slate-200 focus:ring-4 focus:ring-slate-100 no-underline inline-block", data: { turbo: "_top" } %>
+    <%= link_to "Cancel", posts_path, class: "bg-slate-100 rounded px-4 py-2 text-center text-slate-700 font-medium hover:bg-slate-200 focus:ring-4 focus:ring-slate-100 no-underline inline-block", data: { turbo: false } %>
   </div>
 <% end %>

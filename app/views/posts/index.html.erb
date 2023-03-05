@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Posts</h1>
+<h1 class="font-extrabold text-3xl">Posts</h1>
 
 <div id="posts">
   <% @posts.each do |post| %>
@@ -11,6 +11,6 @@
   <% end %>
 </div>
 
-<%= turbo_frame_tag "new_post_modal" do %>
-  <%= link_to "New post", new_post_path, data: { turbo: "_self" } %>
+<%= turbo_frame_tag "post_modal" do %>
+  <%= link_to "New post", new_post_path, class: "underline" %>
 <% end %>
