@@ -1,0 +1,30 @@
+<%= form_with(model: post, data: { turbo: false }) do |form| %>
+  <% if post.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-6">
+    <%= form.label :title, class: "block mb-1" %>
+    <%= form.text_field :title, class: "w-full rounded border border-slate-300 shadow-inner focus:ring-4 focus:ring-slate-50 text-base placeholder:text-slate-500 focus:shadow-none focus:border-slate-400" %>
+  </div>
+
+  <div class="mb-6">
+    <%= form.label :content, class: "block mb-1"  %>
+    <%= form.text_area :content, class: "w-full rounded border border-slate-300 shadow-inner focus:ring-4 focus:ring-slate-50 text-base min-h-[200px] text-base placeholder:text-slate-500 focus:shadow-none focus:border-slate-400" %>
+  </div>
+
+
+  <div class="flex space-x-3 items-center justify-between">
+    <%= form.submit class: "rounded bg-teal-600 hover:bg-teal-700 px-4 py-2 text-center text-white font-medium focus:ring-4 focus:ring-teal-50 hover:cursor-pointer" %>
+
+    <%= link_to "Cancel", posts_path, class: "bg-slate-100 rounded px-4 py-2 text-center text-slate-700 font-medium hover:bg-slate-200 focus:ring-4 focus:ring-slate-100 no-underline inline-block", data: { turbo: "_top" } %>
+  </div>
+<% end %>
