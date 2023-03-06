@@ -3,7 +3,10 @@
 <%= render @post %>
 
 <div>
-  <%= link_to "Edit this post", edit_post_path(@post) %> |
+  <%= turbo_frame_tag "post_modal" do %>
+    <%= link_to "Edit this post", edit_post_path(@post) %>
+  <% end %>
+
   <%= link_to "Back to posts", posts_path %>
 
   <%= button_to "Destroy this post", @post, method: :delete %>
